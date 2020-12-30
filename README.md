@@ -29,3 +29,9 @@ main gcloud and gsutil commands for GCP
 # list all components instaled
 > gcloud components list
 
+# Como compartilhar snapshots entre projetos
+> gcloud compute disks snapshot disk-1 --project project-a --snapshot-names snapshot-1
+
+> gcloud compute disks create disk-2  --project project-b --source-snapshot projects/project-a/global/snapshots/snapshot-1
+
+> gcloud compute instances attach-disk instance-1 --project project-b --disk disk-2
