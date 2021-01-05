@@ -35,3 +35,6 @@ main gcloud and gsutil commands for GCP
 > gcloud compute disks create disk-2  --project project-b --source-snapshot projects/project-a/global/snapshots/snapshot-1
 
 > gcloud compute instances attach-disk instance-1 --project project-b --disk disk-2
+
+# Bigfiles
+gsutil -o GSUtil:parallel_composite_upload_threshold=150M cp nfs-server/CentOS-8.3.2011-x86_64-dvd1.iso gs://test-dump-mongo
